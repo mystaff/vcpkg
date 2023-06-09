@@ -173,8 +173,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv libintl
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libtool-2.4.6-9-x86_64.pkg.tar.xz"
-        SHA512 b309799e5a9d248ef66eaf11a0bd21bf4e8b9bd5c677c627ec83fa760ce9f0b54ddf1b62cbb436e641fbbde71e3b61cb71ff541d866f8ca7717a3a0dbeb00ebf
+        URL "https://repo.msys2.org/msys/x86_64/libtool-2.4.7-3-x86_64.pkg.tar.zst"
+        SHA512 a202ddaefa93d8a4b15431dc514e3a6200c47275c5a0027c09cc32b28bc079b1b9a93d5ef65adafdc9aba5f76a42f3303b1492106ddf72e67f1801ebfe6d02cc
         DEPS grep sed coreutils file findutils
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -202,9 +202,9 @@ function(vcpkg_acquire_msys out_msys_root)
         SHA512 0719e8d3683711453ff77496cad11583e877ea52806e5ea3f470444705705db20a8a9fe99987166b02c6bd240c06c7d86faa979a7bc5536c9c804d800b60b7be
         DEPS libiconv libintl gmp
     )
-    z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/grep-3.0-2-x86_64.pkg.tar.xz"
-        SHA512 c784d5f8a929ae251f2ffaccf7ab0b3936ae9f012041e8f074826dd6077ad0a859abba19feade1e71b3289cc640626dfe827afe91c272b38a1808f228f2fdd00
+    z_vcpkg_acquire_msys_declare_package( #grep-3.6-1-x86_64.pkg.tar.zst.sig
+        URL "https://repo.msys2.org/msys/x86_64/grep-3.6-1-x86_64.pkg.tar.zst"
+        SHA512 c568d0968a78284fa62470fb9cf97c6214618177e402ca3bc8a8711504437b15b6a7cdf92424f16354422a3850691dd30eaef92cf5f6a645398da2b021843115
         DEPS libiconv libintl libpcre
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -331,8 +331,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS msys2-runtime
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/msys2-runtime-3.2.0-8-x86_64.pkg.tar.zst"
-        SHA512 fdd86f4ffa6e274d6fef1676a4987971b1f2e1ec556eee947adcb4240dc562180afc4914c2bdecba284012967d3d3cf4d1a392f798a3b32a3668d6678a86e8d3
+        URL "https://repo.msys2.org/msys/x86_64/msys2-runtime-3.2.0-15-x86_64.pkg.tar.zst"
+        SHA512 e054f5e1fc87add7fc3f5cbafd0ff5f3f77a30385073c17d0a8882feb3319a4cba355ccb1cb67ccb9fa704b514c3d05f54c45199011f604c69bb70e52fa33455
     )
 
     z_vcpkg_acquire_msys_declare_package(
