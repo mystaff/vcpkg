@@ -203,8 +203,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS libiconv libintl gmp
     )
     z_vcpkg_acquire_msys_declare_package( #grep-3.6-1-x86_64.pkg.tar.zst.sig
-        URL "https://repo.msys2.org/msys/x86_64/grep-3.6-1-x86_64.pkg.tar.zst"
-        SHA512 c568d0968a78284fa62470fb9cf97c6214618177e402ca3bc8a8711504437b15b6a7cdf92424f16354422a3850691dd30eaef92cf5f6a645398da2b021843115
+        URL "https://repo.msys2.org/msys/x86_64/grep-1~3.0-6-x86_64.pkg.tar.zst"
+        SHA512 79b4c652082db04c2ca8a46ed43a86d74c47112932802b7c463469d2b73e731003adb1daf06b08cf75dc1087f0e2cdfa6fec0e8386ada47714b4cff8a2d841e1
         DEPS libiconv libintl libpcre
     )
     z_vcpkg_acquire_msys_declare_package(
