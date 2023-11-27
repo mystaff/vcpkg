@@ -15,9 +15,14 @@ parameters:
     default: 'x86_windows'
   - name: poolName
     type: string
+  - name: tripletPattern
+    displayName: 'Enable the triplets which contain this substring'
+    type: string
+    default: ''
 
 jobs:
 - job: ${{ parameters.jobName }}
+  condition: and(succeeded(), contains('^${{ parameters.triplet }}$', '${{ parameters.tripletPattern }}'))
   pool:
     name: ${{ parameters.poolName }}
   workspace:
@@ -96,3 +101,12 @@ jobs:
     inputs:
       PathtoPublish: scripts/list_files
       ArtifactName: 'file lists for ${{ parameters.triplet }}'
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    condition: ne(variables['XML_RESULTS_FILE'], '')
+    inputs:
+      testRunTitle: ${{ parameters.triplet }}
+      testResultsFormat: xUnit
+      testResultsFiles: $(XML_RESULTS_FILE)
+      platform: ${{ parameters.triplet }}
+

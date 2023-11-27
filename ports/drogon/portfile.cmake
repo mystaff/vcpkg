@@ -1,15 +1,21 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO an-tao/drogon
-    REF v1.7.5
-    SHA512 8be77961026d13b55dbfcc2e43972b4fb8f1cd9a6bfb8098d5bdfc8b60ff67c2d3ede4bdb5815614a8233dc184cbf3aa363a9d33eed96b9f748544e20b15f2c7
+    REF "v${VERSION}"
+    SHA512 a49b032689869e97505612570285d21c0a68604c70e379f95c70fd5d8014f6890809283956b1b83fda4551c01c526ab2b575351c23a3e58fb4f920c9e1b7e92b
     HEAD_REF master
     PATCHES
-        vcpkg.patch
-        drogon_config.patch
-        static-brotli.patch
-        use-libmariadb.patch
+         0001-vcpkg.patch
+         0002-drogon-config.patch
+         0003-deps-redis.patch
+         0004-drogon-ctl.patch
+         0005-drogon-cross-compile.patch
 )
+
+set(DROGON_CTL_TOOL "")
+if(VCPKG_CROSSCOMPILING)
+    set(DROGON_CTL_TOOL "${CURRENT_HOST_INSTALLED_DIR}/tools/drogon/drogon_ctl${VCPKG_HOST_EXECUTABLE_SUFFIX}")
+endif()
 
 vcpkg_check_features(
     OUT_FEATURE_OPTIONS FEATURE_OPTIONS
@@ -29,10 +35,12 @@ vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     DISABLE_PARALLEL_CONFIGURE
     OPTIONS
-        -DBUILD_DROGON_SHARED=${BUILD_DROGON_SHARED}
+        -DBUILD_SHARED_LIBS=${BUILD_DROGON_SHARED}
         -DBUILD_EXAMPLES=OFF
         -DCMAKE_DISABLE_FIND_PACKAGE_Boost=ON
-        ${FEATURE_OPTIONS}
+        -DUSE_SUBMODULE=OFF
+        "-DDROGON_CTL_TOOL=${DROGON_CTL_TOOL}"
+        ${FEATURE_OPTIONS}        
     MAYBE_UNUSED_VARIABLES
         CMAKE_DISABLE_FIND_PACKAGE_Boost
 )
