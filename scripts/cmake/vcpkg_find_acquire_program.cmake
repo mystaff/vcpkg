@@ -534,7 +534,7 @@ function(vcpkg_find_acquire_program program)
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-pkg-config-${VERSION}-any.pkg.tar.zst"
                         0c086bf306b6a18988cc982b3c3828c4d922a1b60fd24e17c3bead4e296ee6de48ce148bc6f9214af98be6a86cb39c37003d2dcb6561800fdf7d0d1028cf73a4
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libwinpthread-${program_version}-any.pkg.tar.zst"
-                        a4a1b268f4e054fe514186eb88e9ccc2963a897082d315289c8970ccee69ae38a5028cf797b99fde1022dc77e0b94f9d4b1da37228ec88b0e3
+                        a4a1b268f4e054fe514186eb88e9ccc2963a897082d315289c8970ccee69ae38a5028cf797b99fde1022dc77e0b94f9d4b1da37228ec88b0e36f86c42df2fa12
                 )
             endif()
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
