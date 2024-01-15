@@ -138,8 +138,8 @@ function(vcpkg_acquire_msys out_msys_root)
         SHA512 04d06b9d5479f129f56e8290e0afe25217ffa457ec7bed3e576df08d4a85effd80d6e0ad82bd7541043100799b608a64da3c8f535f8ea173d326da6194902e8c
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/gzip-1.11-1-x86_64.pkg.tar.zst"
-        SHA512 bcd9d7839aef5f2b73c4d39b51838e62626c201c808d512806ba0a1619aee83c7deddb0d499fd93f9815fe351d7ab656c31c9dc7ee1171d77ad6d598e04dfcbe
+        URL "https://repo.msys2.org/msys/x86_64/gzip-1.12-1-x86_64.pkg.tar.zst"
+        SHA512 207c084d08bf2d911c33b8699ea71f606420c94420a2732a916fa17b4f975d7f1ff319e7d5736bf3fdd789ded606cfc087b9bfa71e29aa5812e33931831824d6
         DEPS msys2-runtime
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -163,8 +163,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS m4 perl
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/diffutils-3.8-2-x86_64.pkg.tar.zst"
-        SHA512 ee74e457c417d6978b3185f2fb8e15c9c30ecfc316c2474d69c978e7eb2282a3bd050d68dbf43d694cb5ab6f159b0e7ca319d01f8192071d82a224dde87d69b5
+        URL "https://repo.msys2.org/msys/x86_64/diffutils-3.8-3-x86_64.pkg.tar.zst"
+        SHA512 e22015af9a4c4e6e604711adcd4a0941114793f7490a3b9f30e7fb04fd3f596a354bd0a9b655e6b8e083cbd1b462c1fdcdcd72758e0c1e759e1daf8c25889302
         DEPS msys2-runtime
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -178,13 +178,13 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS grep sed coreutils file findutils
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/file-5.41-2-x86_64.pkg.tar.zst"
-        SHA512 124c3983608879362acea7d487bf23690f371b3cfe0355385f0e643263b2a5568abe5cebda92ef9bc534e81f850138f589e75982f36a53f509676056d71de642
+        URL "https://repo.msys2.org/msys/x86_64/file-5.41-3-x86_64.pkg.tar.zst"
+        SHA512 5a114b800681b7e5a1d194a933900667a0bb4be4bfda3dba3141ce3c434abf858ba15b0eceaf60d24b6196d56900e7bf91a3c1fd16a08a9358278d83327585f4
         DEPS gcc-libs zlib libbz2
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/zlib-1.2.11-1-x86_64.pkg.tar.xz"
-        SHA512 b607da40d3388b440f2a09e154f21966cd55ad77e02d47805f78a9dee5de40226225bf0b8335fdfd4b83f25ead3098e9cb974d4f202f28827f8468e30e3b790d
+        URL "https://repo.msys2.org/msys/x86_64/zlib-1.2.12-1-x86_64.pkg.tar.zst"
+        SHA512 a8b0f62d9b2b01cf10701d4c62d4f3cfac4dc7be6bff3e57c3dbb48a9671df442b473316b89bf15b3f86b570a0b3d3fed32cd1415a64e6dbbe0e3a20939b04e0
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -251,13 +251,13 @@ function(vcpkg_acquire_msys out_msys_root)
         SHA512 8d5c04354fdc7309e73abce679a4369c0be3dc342de51cef9d2a932b7df6a961c8cb1f7e373b1b8b2be40343a95fbd57ac29ebef63d4a2074be1d865e28ca6ad
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/libreadline-8.1.001-1-x86_64.pkg.tar.zst"
-        SHA512 4104eb0c18b8c06ab3bd4ba6420e3464df8293bec673c88da49e2f74cf1d583c922e9ead5691271fe593d424f92d1fd8668a3002174d756993d5b18337459bab
+        URL "https://repo.msys2.org/msys/x86_64/libreadline-8.1.002-1-x86_64.pkg.tar.zst"
+        SHA512 94197afbc011bdfaa744150a584d9d4bad7568d790b8e6ddc1a545439435e42db9ef5742c5d4adf9a8112372d32f6893babc03022ce9627734dff42009042412
         DEPS ncurses
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/ncurses-6.2-2-x86_64.pkg.tar.zst"
-        SHA512 4bf744a21ab2030ea9d65eb4d824ec5bed4532b7a489859e5e19bba11b5ba9be08613de48acb38baacfd2a7295722e4d858d7c577565f1999d2583defbbb58f2
+        URL "https://repo.msys2.org/msys/x86_64/ncurses-6.3-1-x86_64.pkg.tar.zst"
+        SHA512 9e58e13d2047490cc10e1e26762a6bca8cf909590abdd106fffaafb605ce45305dc2987a52fb95ec744c1ec433d38cee8fe4d6f67ef05771768280f5fe387c04
         DEPS msys2-runtime
     )
     z_vcpkg_acquire_msys_declare_package(
@@ -311,8 +311,8 @@ function(vcpkg_acquire_msys out_msys_root)
         DEPS gcc-libs
     )
     z_vcpkg_acquire_msys_declare_package(
-        URL "https://repo.msys2.org/msys/x86_64/findutils-4.8.0-1-x86_64.pkg.tar.zst"
-        SHA512 74f8750636becefd3675c89957dfb8a244d2db6fec80bf352998edfef93f66d0e2a37d7f2869a79dd197acf2057ccd6aefd12c58e94154765896a432831ab49c
+        URL "https://repo.msys2.org/msys/x86_64/findutils-4.9.0-3-x86_64.pkg.tar.zst"
+        SHA512 1538733929ecc11bc7c19797577e4cd59cc88499b375e3c2ea4a8ed4d66a1a02f4468ff916046c76195ba92f4c591d0e351371768117a423595d2e43b3321aad
         DEPS libintl libiconv
     )
     z_vcpkg_acquire_msys_declare_package(
