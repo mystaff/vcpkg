@@ -526,7 +526,7 @@ function(vcpkg_find_acquire_program program)
         elseif(CMAKE_HOST_WIN32)
             if(NOT EXISTS "${PKGCONFIG}")
                 set(VERSION 0.29.2-3)
-                set(program_version git-10.0.0.r0.gaa08f56da-1)
+                set(program_version git-10.0.0.r105.gee5758234-1)
                 vcpkg_acquire_msys(
                     PKGCONFIG_ROOT
                     NO_DEFAULT_PACKAGES
@@ -534,7 +534,7 @@ function(vcpkg_find_acquire_program program)
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-pkg-config-${VERSION}-any.pkg.tar.zst"
                         0c086bf306b6a18988cc982b3c3828c4d922a1b60fd24e17c3bead4e296ee6de48ce148bc6f9214af98be6a86cb39c37003d2dcb6561800fdf7d0d1028cf73a4
                         "https://repo.msys2.org/mingw/i686/mingw-w64-i686-libwinpthread-${program_version}-any.pkg.tar.zst"
-                        a4dc282f8da68c9064b186ffc33e07d6c9b079130eb6cbd69039ddf3f6adc05e7f7a7a396584df257693c9db83178eae209b143a3e211cb9b904d829b698805d
+                        ab7a8b557f06bf70cf72bd2fda776f59820ab17c55bcdb622f13f006f62dfbb53fb9f1d6f6b22a3b9bdcd6fccd898a5598ef033180daa0d6703c95e773b31002
                 )
             endif()
             set("${program}" "${PKGCONFIG_ROOT}/mingw32/bin/pkg-config.exe" CACHE INTERNAL "")
