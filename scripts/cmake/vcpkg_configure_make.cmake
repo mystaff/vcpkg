@@ -221,7 +221,12 @@ function(vcpkg_configure_make)
     endif()
 
     set(configure_env "V=1")
-
+    if(VCPKG_TARGET_IS_OSX)
+        z_vcpkg_append_to_configure_environment(configure_env CFLAGS "-arm64")
+        z_vcpkg_append_to_configure_environment(configure_env CPPFLAGS "-arm64")
+        set(VCPKG_OSX_ARCHITECTURES "arm64")
+        set(CMAKE_OSX_ARCHITECTURES "arm64")
+    endif()
     # Establish a bash environment as expected by autotools.
     if(CMAKE_HOST_WIN32)
         list(APPEND msys_require_packages autoconf-wrapper automake-wrapper binutils libtool make pkgconf which)
