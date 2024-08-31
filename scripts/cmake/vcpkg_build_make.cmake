@@ -13,6 +13,11 @@ function(vcpkg_build_make)
         message(WARNING "vcpkg_make_build was passed extra arguments: ${arg_UNPARSED_ARGUMENTS}")
     endif()
 
+    if(VCPKG_TARGET_IS_OSX)
+        set(ENV{CFLAGS} "-arch x86_64 -arch arm64")
+        set(ENV{CXXFLAGS} "-arch x86_64 -arch arm64")
+    endif()
+
     if(NOT DEFINED arg_LOGFILE_ROOT)
         set(arg_LOGFILE_ROOT "build")
     endif()
@@ -106,10 +111,6 @@ function(vcpkg_build_make)
             else()
                 string(APPEND LDFLAGS_${cmake_buildtype} " ${LINKER_FLAGS_${cmake_buildtype}}")
             endif()
-#            if(VCPKG_TARGET_IS_OSX)
-#                string(APPEND CFLAGS_${cmake_buildtype} "-arch x86_64 -arch arm64")
-#                string(APPEND CXXFLAGS_${cmake_buildtype} "-arch x86_64 -arch arm64")
-#            endif()
 
             # Setup environment
             set(ENV{CPPFLAGS} "${CPPFLAGS_${cmake_buildtype}}")
