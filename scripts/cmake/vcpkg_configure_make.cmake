@@ -60,7 +60,7 @@ macro(z_vcpkg_determine_autotools_target_arch_mac out_var)
     if(osx_archs_num EQUAL 0)
         set(${out_var} "${VCPKG_DETECTED_CMAKE_HOST_SYSTEM_PROCESSOR}")
     elseif(osx_archs_num GREATER_EQUAL 2)
-        set(${out_var} "universal")
+        set(${out_var} "aarch64")
     else()
         # Better match the arch behavior of config.guess
         # See: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD
@@ -131,14 +131,6 @@ function(vcpkg_configure_make)
 
     if(DEFINED arg_UNPARSED_ARGUMENTS)
         message(WARNING "${CMAKE_CURRENT_FUNCTION} was passed extra arguments: ${arg_UNPARSED_ARGUMENTS}")
-    endif()
-
-    if(VCPKG_TARGET_IS_OSX)
-        set(VCPKG_OSX_ARCHITECTURES "arm64")
-        set(CMAKE_OSX_ARCHITECTURES "arm64")
-        set(ENV{CFLAGS} "-arch arm64")
-        set(ENV{CPPFLAGS} "-arch arm64")
-        set(ENV{CXXFLAGS} "-arch arm64")
     endif()
     z_vcpkg_get_cmake_vars(cmake_vars_file)
     debug_message("Including cmake vars from: ${cmake_vars_file}")
