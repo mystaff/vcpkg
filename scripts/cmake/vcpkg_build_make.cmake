@@ -106,7 +106,11 @@ function(vcpkg_build_make)
             else()
                 string(APPEND LDFLAGS_${cmake_buildtype} " ${LINKER_FLAGS_${cmake_buildtype}}")
             endif()
-            
+            if(VCPKG_TARGET_IS_OSX)
+                string(APPEND CFLAGS_${cmake_buildtype} "-arch x86_64 -arch arm64")
+                string(APPEND CXXFLAGS_${cmake_buildtype} "-arch x86_64 -arch arm64")
+            endif()
+
             # Setup environment
             set(ENV{CPPFLAGS} "${CPPFLAGS_${cmake_buildtype}}")
             set(ENV{CFLAGS} "${CFLAGS_${cmake_buildtype}}")
